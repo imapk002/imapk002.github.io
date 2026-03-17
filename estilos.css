@@ -1,0 +1,658 @@
+/* estilos.css - CSS básico */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color: #467F8C !important;
+    --secondary-color: #73B1BF;
+    --background-color: #fff;
+    --white-color: #fff;
+    --links-color:var(--secondary-color);
+    --h1-color: #333;
+    --h2-color: #274B59;
+    --h3-color: #333;
+    --h4-color: #333;
+    --text-color: #ffffff;
+    --font-family: 'Alata', sans-serif;
+    
+}
+
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin-top: 1em;
+}
+
+a {
+    color: --links-color;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.mi-navbar {
+  background-color: var(--h2-color); 
+  padding: 1rem 0;
+}
+
+.logo-navbar {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.titulo-navbar {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.subtitulo-navbar {
+  color: #cfd8dc;
+  font-size: 0.8rem;
+}
+
+.navbar-nav .nav-link {
+  color: #e0e0e0;
+  font-weight: 500;
+  margin: 0 1rem;
+  letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.navbar-toggler {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.container-inicio {
+    width: 400px; 
+    margin: 20px; 
+    padding: 10px;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+ 
+}
+
+.inicio-wrapper {
+    display: flex;
+    justify-content: center; /* centra horizontalmente las cajas */
+    align-items: flex-start;
+    gap: 20px; /* espacio entre contenedores */
+    flex-wrap: wrap; /* permite que bajen en pantallas pequeñas */
+    padding: 20px 0;
+}
+
+button {
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background: var(--secondary-color);
+}
+
+
+
+h2 {
+  color: var(--h2-color);
+  font-family: 'Alexandria', sans-serif;
+  font-size: 2rem;
+}
+
+.title-section > h2 {
+  background-color: var(--white-color);
+  padding: 15px 10px 10px;
+  display: inline-block;
+  text-shadow: 0px 4px 4px rgba(0,0,0,0.6);
+
+  margin: 0;
+}
+
+.text-section {
+    display: flex;
+    margin-top: 20px;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.btn-enviar {
+    background-color: #467F8C;
+    border-color: #467F8C;
+    color: #ffffff;
+}
+
+.btn-enviar:hover,
+.btn-enviar:focus {
+    background-color: #3a6a72; 
+    border-color: #3a6a72;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.boton-color{
+  background-color:var(--primary-color) !important;
+  color: whitesmoke;
+}
+
+.icono-tratamientos {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 20px auto 0 auto;
+    display: block;
+}
+
+.container-tratamientos {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2.5rem 1rem; 
+    background: var(--primary-color); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    z-index: 1;
+    box-sizing: border-box;
+    
+}
+
+.icons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* IMPORTANTE: evita que los hijos se estiren verticalmente */
+    gap: 15px;
+}
+
+.icon-link {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    
+    /* BLOQUEO DE FORMA */
+    width: 120px;          /* Ancho base */
+    height: 120px;         /* Alto base */
+    aspect-ratio: 1 / 1;   /* Obliga a que sea un cuadrado perfecto */
+    flex: 0 0 auto;        /* PROHIBIDO crecer (0) y PROHIBIDO encogerse (0) */
+    
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: transform .15s ease;
+    overflow: hidden;      /* Evita que el texto empuje las paredes */
+}
+
+/* --- AJUSTE PARA MÓVIL (Pantallas pequeñas) --- */
+@media (max-width: 576px) {
+    .icons-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centra los círculos si sobra espacio */
+        gap: 10px;               /* Espacio controlado entre ellos */
+        padding: 10px;
+    }
+
+    .icon-link {
+        /* Para 3 por fila: (100% / 3) menos el gap. 
+           Usamos un valor fijo pequeño para asegurar que no se deformen.
+        */
+        width: 95px !important; 
+        height: 95px !important;
+        flex: 0 0 95px !important; /* BLOQUEO: No crece, no se achica */
+        
+        padding: 8px;
+        margin: 0; /* Dejamos que el 'gap' del padre maneje el espacio */
+        aspect-ratio: 1 / 1;
+    }
+
+    .icon-link img {
+        width: 30px !important;
+        height: 30px !important;
+        margin-bottom: 4px;
+    }
+
+    .icon-link h3 {
+        font-size: 0.7rem !important;
+        line-height: 1;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Si el texto es muy largo, pone "..." */
+        white-space: nowrap;      /* Evita que el texto salte y estire el círculo */
+    }
+}
+
+.icon-link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+}
+
+.icon-link img {
+    width: 50px; 
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 5px; /* Espacio entre icono y texto */
+    flex-shrink: 0;
+}
+
+.icon-link img,
+.icono-tratamientos {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+}
+
+.icon-link h3 {
+    margin: 0;
+    font-size: 0.85rem;
+    color: white;
+    width: 100%;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.imagen-inicio {
+  width: 100vw; /* ocupa todo el ancho del viewport */
+  margin-left: calc(-50vw + 50%); /* compensa el ancho del contenedor */
+  display: block;
+  height: auto; /* mantiene proporción */
+}
+
+
+.image-overlay {
+    position: relative;
+    width: 100%;
+}
+
+
+.image-overlay img {
+    display: block;
+    width: 100%;
+    height: 77vh;
+    border-radius: 8px;
+    filter: brightness(50%);
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto; 
+}
+
+
+
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  max-width: 600px;
+  padding: 20px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+    background: rgba(70, 127, 140, 0.55); 
+  border-radius: 10px;
+}
+
+
+.overlay-text p {
+    margin: 0;
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+.mapa-wrapper {
+  width: 100vw;      /* ocupa todo el ancho del viewport */
+  margin-left: calc(-50vw + 50%); /* corrige si hay padding o max-width en el contenedor */
+}
+
+.mapa-wrapper iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  display: block;
+}
+
+
+.parrafo-nosotros{
+    color: black;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+.titulo-nosotros {
+    color:var(--primary-color) !important;
+    text-shadow: none; 
+}
+.imagen-dentistas{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .overlay-text{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 86%;
+    max-width: 420px;
+    padding: 12px 14px;
+  }
+  .overlay-text p { font-size: 1.2rem; }
+}
+
+@media (max-width: 600px) {
+  .overlay-text{
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 92%;
+    max-width: 360px;
+    padding: 10px 12px;
+  }
+  .overlay-text p { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+    .icon-link { width: 88px; height: 88px; }
+    .icon-link img { width: 56%; height: 56%; }
+}
+
+
+.contenedor-instalaciones{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; 
+    align-items: center;
+    padding: 20px 10px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+/*footer*/
+/* Reduce el relleno del footer al mínimo */
+.footer-dentaltech {
+    background-color: var(--primary-color) !important; /* Mantiene tu color */
+    line-height: 1; /* Esto es lo que realmente achica el alto del texto */
+}
+.footer-dentaltech img {
+    max-height: 77px; /* Evita que el logo estire el footer */
+    width: auto;
+}
+/* Elimina el espacio sobrante de la fila de Bootstrap */
+.footer-dentaltech .row {
+    margin: 0 !important;
+}
+
+/* Elimina el margen inferior que Bootstrap le pone a las columnas en móvil */
+.footer-dentaltech [class^="col-"] {
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;}
+
+/* Quita el margen que el navegador le pone al texto automáticamente */
+.footer-dentaltech h3, 
+.footer-dentaltech p {
+    margin: 0 !important;
+}
+/*Cambios de Paulo al CSS, esperen cosas sin usar porque voy a prueba y error */
+.card-1{
+  background-color: var(--secondary-color);
+  border-left: 5px solid var(--primary-color);
+}
+.card-1 h3{
+  color: var(--primary-color)
+}
+.card-1 .list-group-item{
+  background-color: var(--background-color)
+}
+.card-2{
+  background-color: var(--primary-color);
+  border: 5px solid var(--secondary-color)
+}
+
+/*Código para que la imágen del tratamiento se deslize hacia la pantalla*/
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);/*original */
+      opacity: 1;
+    }
+}
+
+.trtmnt-img.carga-animada {
+    animation: slideInFromLeft 1s ease-out forwards; 
+    opacity: 0; 
+}
+
+/*Agrego este estilo para que todas las imagenes tengan el mismo tamaño*/
+.trtmnt-img {
+    width: 100vw;      
+    max-width: 100%;   
+    height: 60vh; 
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;  
+}
+
+
+.nosotros-hero {
+  background: linear-gradient(90deg, rgba(70,127,140,0.06), rgba(115,177,191,0.03));
+  color: var(--h2-color);
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.nosotros-hero .display-5 {
+  color: var(--h2-color);
+  font-weight: 100;
+  margin-bottom: 0.3rem;
+}
+
+.section-nosotros .card-plain {
+  border: none;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.section-nosotros .titulo-nosotros {
+  color: --var(--primary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.staff-section h2, .faq-section h2 {
+  color: --var(--primary-color);
+  font-weight: 500;
+}
+
+.staff-card {
+  border: none;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  padding: 14px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(24,40,44,0.08);
+}
+
+.imagen-dentistas {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(9,24,28,0.06);
+  max-width: 100%;
+  width: 100vw;
+}
+
+
+.faq-section .accordion-button {
+  background: #ffffff;
+  color: #123;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+
+
+
+.nosotros-hero, .section-nosotros, .staff-section, .faq-section {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  color: #274B59;
+}
+
+@media (max-width: 768px) {
+  .nosotros-hero { padding-top: 20px; padding-bottom: 20px; }
+  .imagen-dentistas { max-width: 100%; }
+  .parrafo-nosotros { font-size: 0.98rem; }
+}
+
+@media (max-width: 480px) {
+  .nosotros-hero .display-5 { font-size: 1.4rem; }
+  .parrafo-nosotros { font-size: 0.95rem; }
+}
+
+/* Estilos para Testimonios */
+        .testimonio-card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .testimonio-card:hover { transform: translateY(-10px); }
+        .img-paciente {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+        }
+        .badge-tratamiento { background-color: #e7f1ff; color:#3a6a72; font-weight: 500; }
+        .text-quote { font-style: italic; color: #555; }
+        .btn-filtro { border-radius: 20px; padding: 8px 20px; }
+
+
+/*Solucionar problema de barra de scroll horizontal*/
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* 1. Cambia el fondo y el texto cuando el acordeón está ABIERTO */
+.faq-section .accordion-button:not(.collapsed) {
+    background-color: #274B59; /* Tu color primario */
+    color: #ffffff;            /* Texto en blanco para que contraste */
+    box-shadow: none;          /* Quita sombras internas si las hay */
+}
+
+/* 2. Cambia el color de la flecha (icono) para que sea blanca cuando está abierto */
+.faq-section .accordion-button:not(.collapsed)::after {
+    filter: var(--secondary-color);
+}
+
+/* 3. Cambia el color del "brillo" (foco) al hacer click para que sea acorde a tu marca */
+.faq-section .accordion-button:focus {
+    border-color: #274B59;
+    box-shadow: 0 0 0 0.25rem rgba(39, 75, 89, 0.25); /* Tu color con transparencia */
+}
+
+/* Solucionar titulos random */
+.faq-section .text-white, 
+.section-nosotros .text-white {
+    color: #ffffff !important;
+}
+
+
+/* Solo para las imágenes de fondo del carrusel de INSTALACIONES */
+#carouselExampleAutoplaying .carousel-item img {
+  height: 80vh;
+  object-fit: cover;    
+  width: 100%;  
+}
+
+/* Este es el contenedor que une todo */
+.contenedor-unico {
+    background-color:#3a6a72;
+    color: white;
+    border-radius: 20px;
+    overflow: hidden; /* Importante para que los hijos no se salgan de las esquinas redondeadas */
+}
+.bloque-formulario {
+    background-color:var(--h2-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Ajuste para que los inputs no se vean gigantes */
+.formulario-interna {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Cambia el color de los enlaces en la tabla de costos */
+.table td a.enlace-tratamiento {
+    color:var(--primary-color) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Color cuando pasas el mouse */
+.table td a.enlace-tratamiento:hover {
+    color:#123 !important;
+    text-decoration: underline;
+}
