@@ -656,3 +656,7 @@ html, body {
     color:#123 !important;
     text-decoration: underline;
 }
+
+.color-principal{
+color: var(--primary-color);
+}
